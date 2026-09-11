@@ -17,9 +17,9 @@
 
 ```bash
 cd ComfyUI/custom_nodes
-git clone https://github.com/VeniaminPetrov/ComfyUI-ImageSave.git
-# зависимости уже есть в python_embeded, но при необходимости:
-pip install -r ComfyUI-ImageSave/requirements.txt
+git clone https://github.com/VeniaminPetrov/ComfyUI-Image_Save-AI.git
+# зависимости (numpy, Pillow) обычно уже есть в python_embeded; при необходимости:
+.\python_embeded\python.exe -m pip install -r ComfyUI-Image_Save-AI/requirements.txt
 ```
 
 Перезапустите ComfyUI. Нод доступен в категории **Utility → Image** как `💾 Simple Image Save`.
