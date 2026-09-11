@@ -202,11 +202,14 @@ class SimpleImageSave:
                 if image_format.lower() == "png":
                     metadata = PngInfo()
                     if embed_workflow and (prompt or extra_pnginfo):
-                        if prompt:
-                            metadata.add_text("prompt", json.dumps(prompt))
+                        # PIL 12.x: add_text требует str; json.dumps гарантирует строку.
+                        # Pillow >= 9.2 кодирует как iTXt — кириллица в значениях безопасна.
+                        if prompt is not None:
+                            metadata.add_text("prompt", json.dumps(prompt, ensure_ascii=False))
                         if extra_pnginfo:
-                            for key, value in extra_pnginfo.items():
-                                metadata.add_text(key, json.dumps(value))
+                            for key, value in (extra_pnginfo or {}).items():
+                                v = value if isinstance(value, str) else json.dumps(value, ensure_ascii=False)
+                                metadata.add_text(str(key), v)
                         self._save_workflow_json(filepath, prompt, extra_pnginfo)
                     img.save(filepath, pnginfo=metadata, compress_level=4)
 
