@@ -16,3 +16,6 @@ env/
 .idea/
 .vscode/
 *.swp
+
+# Локальные скрипты
+.squash_history.py
