@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Виртуальные окружения
+venv/
+env/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp

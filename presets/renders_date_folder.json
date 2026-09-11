@@ -1,0 +1,18 @@
+{
+  "name": "renders_date_folder",
+  "description": "Рендеры в D:\\AI\\renders с папкой по дате, PNG, счётчик",
+  "node_id": "SimpleImageSave",
+  "widgets_values": [
+    true,
+    "D:\\AI\\renders",
+    true,
+    false,
+    "render",
+    "",
+    "_",
+    true,
+    true,
+    "png",
+    90
+  ]
+}
